@@ -4,10 +4,7 @@
 
 (module+ test
   (define (list->list-node lst)
-    (if (null? lst)
-      #f
-      (list-node (car lst)
-                 (list->list-node (cdr lst)))))
+    (foldr list-node #f lst))
 
   (define (list-node-append head-a head-b)
     (let loop ([node head-a])
