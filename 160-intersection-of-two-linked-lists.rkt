@@ -1,10 +1,6 @@
 #lang racket
 
-(struct list-node
-  (val next) #:mutable #:transparent)
-
-(define (make-list-node [val 0])
-  (list-node val #f))
+(require "list-node.rkt")
 
 (module+ test
   (define (list->list-node lst)
