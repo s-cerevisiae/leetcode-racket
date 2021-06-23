@@ -1,8 +1,6 @@
 #lang racket
 
-(struct tree-node
-  (val left right)
-  #:mutable #:transparent)
+(require "tree-node.rkt")
 
 (define (min-depth root)
   (let traverse ([node root] [depth 0])

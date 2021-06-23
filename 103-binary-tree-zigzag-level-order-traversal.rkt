@@ -1,12 +1,8 @@
 #lang racket
 
+(require "tree-node.rkt")
+
 (require data/gvector data/queue)
-
-(struct tree-node
-  (val left right) #:mutable #:transparent)
-
-(define (make-tree-node [val 0])
-  (tree-node val #f #f))
 
 (define (zigzag-level-order root)
   (define result (gvector))
