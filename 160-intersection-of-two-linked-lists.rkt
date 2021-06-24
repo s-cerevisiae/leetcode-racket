@@ -35,7 +35,7 @@
                                       tail1))
     (check-equal? (get-intersection-node head1-a head1-b)
                   tail1))
-  
+
   (test-case "Example B"
     (define tail2 (list->list-node '(2 4)))
     (define head2-a (list-node-append (list->list-node '(0 9 1))

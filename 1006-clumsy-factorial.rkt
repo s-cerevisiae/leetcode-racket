@@ -7,7 +7,7 @@
             ([x (in-range (- n 1) 0 -1)]
              [op (in-cycle '(* / + -))])
     (match* (op stack)
-      [('* (cons y ys)) 
+      [('* (cons y ys))
        (cons (* y x) ys)]
       [('/ (cons y ys))
        (cons (quotient y x) ys)]
