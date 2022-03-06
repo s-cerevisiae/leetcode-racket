@@ -1,17 +1,17 @@
 #lang racket
 
-(module solution lazy
-  (provide rob)
-
-  (define (rob nums)
-    (define len (length nums))
-    (define dp
-      (for/vector ([i (in-naturals)]
-                   [x (in-list nums)])
-        (cond [(= i 0) x]
-              [(= i 1) (max (vector-ref dp 0) x)]
-              [else (max (+ (vector-ref dp (- i 2)) x)
-                         (vector-ref dp (- i 1)))])))
-    (! (vector-ref dp (- len 1)))))
-
-(require 'solution)
+(define (rob nums)
+  (define len (length nums))
+  (define (dp-ref i)
+    (force (vector-ref dp i)))
+  (define dp
+    (for/vector ([i (in-naturals)]
+                 [x (in-list nums)])
+      (cond [(= i 0) x]
+            [(= i 1)
+             (delay (max x (dp-ref 0)))]
+            [else
+             (delay
+               (max (+ x (dp-ref (- i 2)))
+                    (dp-ref (- i 1))))])))
+  (dp-ref (- len 1)))
