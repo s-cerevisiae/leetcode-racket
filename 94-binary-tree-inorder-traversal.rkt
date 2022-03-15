@@ -6,13 +6,11 @@
                   shift reset))
 
 (define (inorder-traversal root)
-  (define (yield x)
-    (shift k (cons x (k (void)))))
   (reset
     (let traverse ([node root])
       (match node
         [#f '()]
         [(tree-node val left right)
          (traverse left)
-         (yield val)
+         (shift k (cons val (k (void))))
          (traverse right)]))))

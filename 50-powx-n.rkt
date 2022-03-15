@@ -1,7 +1,7 @@
 #lang racket
 
 (define (my-pow x n)
-  ((if (< n 0) / values)
+  ((if (< n 0) / *)
    (let loop ([x x] [n n] [result 1])
      (if (zero? n) result
        (loop (sqr x) (quotient n 2)
