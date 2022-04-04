@@ -32,8 +32,12 @@
            (loop '() (list carry) h))]
       [(cons (cons t1 r1) (cons t2 r2))
        (if (or (null? t1) (null? t2))
-           (cons (link carry (link t1 t2))
-                 (loop '() r1 r2))
+           (if (null? carry)
+               (cons (link t1 t2)
+                     (loop '() r1 r2))
+               (cons '()
+                     (loop (link carry (link t1 t2))
+                           r1 r2)))
            (cons carry
                  (loop (link t1 t2) r1 r2)))])))
 
