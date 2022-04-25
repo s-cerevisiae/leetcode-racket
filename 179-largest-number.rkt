@@ -25,4 +25,4 @@
   (define lst (sort nums greater-than?))
   (if (zero? (car lst))
       "0"
-      (apply string-append (map number->string lst))))
+      (string-append* (map number->string lst))))
