@@ -1,5 +1,8 @@
 #lang racket
 
+;; Parsing with Derivatives
+;; https://matt.might.net/papers/might2011derivatives.pdf
+
 (define (is-match s p)
   (matches?
     (parse (string->list p))

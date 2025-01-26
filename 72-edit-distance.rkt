@@ -1,5 +1,8 @@
 #lang racket
 
+;; Lazy dynamic programming, simple but effective
+;; https://jelv.is/blog/Lazy-Dynamic-Programming/
+
 (define (min-distance word1 word2)
   (define len1 (string-length word1))
   (define len2 (string-length word2))

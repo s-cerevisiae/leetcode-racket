@@ -1,5 +1,7 @@
 #lang racket
 
+;; Parser combinators with explicit continuation passing
+
 (define (is-match s p)
   ((parse (string->list p))
    (string->list s)

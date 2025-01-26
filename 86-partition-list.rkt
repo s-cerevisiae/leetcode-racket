@@ -1,5 +1,8 @@
 #lang racket
 
+;; simple showcase of delimited control operators, shift and reset
+;; http://pllab.is.ocha.ac.jp/~asai/cw2011tutorial/main-e.pdf
+
 (require "list-node.rkt")
 
 (require (only-in racket/control

@@ -13,6 +13,9 @@
   (λ (x) (hash-ref! memo x
            (λ () (f x)))))
 
+;; Top-level memoization trick:
+;; this *replaces* the top-level `generate` with the memoized version, so that
+;; recursive calls are also memoized
 (set! generate (memoize generate))
 
 (define generate-parenthesis

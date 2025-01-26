@@ -1,5 +1,8 @@
 #lang racket
 
+;; Purely functional "inductive" graphs
+;; https://web.engr.oregonstate.edu/~erwig/papers/InductiveGraphs_JFP01.pdf
+
 (define (find-order course-num prerequisites)
   (define nodes (range course-num))
   (define graph
